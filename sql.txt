@@ -1,4 +1,4 @@
--- Chuanjin Pan
+-- chuanjin Pan
 -- base stock info
 DROP TABLE IF EXISTS stock_info;
 DROP SEQUENCE IF EXISTS stock_info_id_seq;
@@ -7,10 +7,44 @@ CREATE SEQUENCE stock_info_id_seq;
 SELECT SETVAL('stock_info_id_seq',1);
 
 CREATE TABLE stock_info (
-    id      INT4 DEFAULT nextval('stock_info_id_seq') NOT NULL PRIMARY KEY,
-    num		bigint,
-    zone	smallint,
-    name    varchar(50),
+    id          INT4 DEFAULT nextval('stock_info_id_seq') NOT NULL PRIMARY KEY,
+    num         bigint,
+    zone        smallint,
+    name        varchar(50),
+    now_price   numeric,
+    yesterday_price numeric,
+    today_today numeric,
+    volume      numeric,
+    outer_disc  numeric,
+    inner_disc  numeric,
+    buy_one     numeric,
+    buy_one_volume numeric,
+    buy_two     numeric,
+    buy_three   numeric,
+    buy_four    numeric,
+    buy_five    numeric,
+    sell_one    numeric,
+    sell_one_volume numeric,
+    sell_two    numeric,
+    sell_three  numeric,
+    sell_four   numeric,
+    sell_five   numeric,
+    transaction varchar(200),
+    transaction_time varchar(50),
+    change      numeric,
+    change_percentage numeric,
+    top_price   numeric,
+    low_price   numeric,
+    price_and_volume varchar(100),
+    volume_price numeric,
+    turnover_rate numeric,
+    pe_rate     numeric,
+    amplitude   numeric,
+    circulation numeric,
+    total_circulation numeric,
+    pb          numeric,
+    up_stop     numeric,
+    down_stop   numeric,
     update_time timestamp default now()
 );
 -- create index stock_num
@@ -29,3 +63,4 @@ CREATE TABLE stock_zone (
 INSERT INTO stock_zone (id,name) VALUES (1,'上市');
 INSERT INTO stock_zone (id,name) VALUES (2,'深市');
 INSERT INTO stock_zone (id,name,cyban) VALUES (3,'深市','创业板');
+
