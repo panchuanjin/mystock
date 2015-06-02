@@ -13,7 +13,7 @@ CREATE TABLE stock_info (
     name        varchar(50),
     now_price   numeric,
     yesterday_price numeric,
-    today_today numeric,
+    today_price numeric,
     volume      numeric,
     outer_disc  numeric,
     inner_disc  numeric,
